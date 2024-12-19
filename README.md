@@ -13,6 +13,7 @@ A Frida module let Minecraft read the .material.bin file from the resource pack,
 2. Download or manually compile the .so files from the [releases](https://github.com/ddf8196/MaterialBinLoader/releases/latest).
 3. Download [patchelf](https://github.com/NixOS/patchelf/releases/latest).
 4. For 32 bit (armeabi-v7a) Minecraft run the following command:
+
 ```
 patchelf --add-needed libmaterialbinloader-arm.so libminecraftpe.so
 ```
