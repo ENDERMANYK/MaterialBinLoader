@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - main
+    tags:
+      - 'v*'
 
 env:
   BUILD_TYPE: Release
@@ -31,10 +33,10 @@ jobs:
           ANDROID_NDK_HOME: ${{ steps.setup-ndk.outputs.ndk-path }}
 
       - name: Create Release and Upload Release Asset
-        uses: softprops/action-gh-release@v1
+        uses: softprops/action-gh-release@v2
         with:
-          tag_name: ${{ github.run_number }}
-          name: Release ${{ github.run_number }}
+          tag_name: ${{ github.ref }}
+          name: Release ${{ github.ref }}
           body: Support 1.21.50 release and 1.21.60.21 preview
           draft: false
           prerelease: false
